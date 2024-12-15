@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_parent"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.frodzy.nestednavigationftbottomnavigationview.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_nestedNavGraph"
+            app:destination="@id/nestedNavGraph" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/nestedNavGraph"
+        app:startDestination="@id/nestedFragmentA">
+
+        <fragment
+            android:id="@+id/nestedFragmentA"
+            android:name="com.frodzy.nestednavigationftbottomnavigationview.fragments.AFragment"
+            android:label="Fragment A" />
+
+        <fragment
+            android:id="@+id/nestedFragmentB"
+            android:name="com.frodzy.nestednavigationftbottomnavigationview.fragments.BFragment"
+            android:label="Fragment B" />
+
+    </navigation>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.frodzy.nestednavigationftbottomnavigationview.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.frodzy.nestednavigationftbottomnavigationview.fragments.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+
+</navigation>

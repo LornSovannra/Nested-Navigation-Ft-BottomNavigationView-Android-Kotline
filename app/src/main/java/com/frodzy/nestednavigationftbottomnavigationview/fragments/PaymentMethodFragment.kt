@@ -1,0 +1,35 @@
+package com.frodzy.nestednavigationftbottomnavigationview.fragments
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.frodzy.nestednavigationftbottomnavigationview.R
+import com.frodzy.nestednavigationftbottomnavigationview.databinding.FragmentPaymentMethodBinding
+
+class PaymentMethodFragment : Fragment() {
+
+    private lateinit var binding: FragmentPaymentMethodBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentPaymentMethodBinding.inflate(layoutInflater)
+
+        setUpEventListeners()
+
+        return binding.root
+    }
+
+    private fun setUpEventListeners(){
+        binding.apply {
+            btnSearch.setOnClickListener {
+                findNavController().navigate(R.id.action_paymentMethodFragment_to_searchFragment)
+            }
+        }
+    }
+
+}
